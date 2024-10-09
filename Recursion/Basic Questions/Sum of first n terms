@@ -1,0 +1,9 @@
+GFG: Sum of first n terms(Not a recursion Question)
+
+class Solution {
+    long sumOfSeries(long n) {
+     
+      long sum = (n * (n + 1)) / 2;
+        return sum * sum;
+    }
+}
