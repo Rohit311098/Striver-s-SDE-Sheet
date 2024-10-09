@@ -1,0 +1,19 @@
+GFG: Factorial numbers less than or equal to n
+class Solution {
+    static ArrayList<Long> factorialNumbers(long n) {
+        
+        long counter=1;
+        long fact=1;
+        ArrayList<Long> result=new ArrayList<>();
+        return getfact(n,counter,fact,result);
+    }
+    
+    static ArrayList<Long> getfact(long n,long counter,Long fact,ArrayList<Long> result)
+    {
+        if(n<fact) return result;
+        result.add(fact);
+        counter++;
+        fact*=counter;
+        return getfact(n,counter,fact,result);
+    }
+}
