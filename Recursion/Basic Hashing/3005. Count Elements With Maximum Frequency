@@ -1,5 +1,6 @@
 LC:3005. Count Elements With Maximum Frequency
 
+//Using HashMap
 class Solution {
     public int maxFrequencyElements(int[] nums) {
         int n=nums.length;
@@ -15,6 +16,26 @@ class Solution {
         {
             if(max_freq==hmap.get(i))
                 count+=max_freq;
+        }
+        return count;
+    }
+}
+
+//Without Using HashMap
+class Solution {
+    public int maxFrequencyElements(int[] nums) {
+        int n=nums.length;
+        int max_freq=Integer.MIN_VALUE;
+        int[] freq=new int[101];
+        for(int i=0;i<n;i++)
+        {
+            freq[nums[i]]++;
+            max_freq=Math.max(max_freq,freq[nums[i]]);  
+        }
+        int count=0;
+         for(int i=0;i<101;i++)
+        {
+            if(freq[i]==max_freq) count+=max_freq;
         }
         return count;
     }
