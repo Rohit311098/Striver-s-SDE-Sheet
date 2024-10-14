@@ -1,5 +1,6 @@
 //GFG- Second Largest
 //TC-O(N)  SC-O(1)
+
 class Solution {
     public int getSecondLargest(int[] arr) {
         
@@ -12,16 +13,12 @@ class Solution {
                 second_max=max;
                 max=arr[i];
             }
-            else if(second_max==-1)
-            {
-                second_max=arr[i];
-            }
             else if(arr[i]!=max && arr[i]>second_max)
             {
                 second_max=arr[i];
             }
         }
         
-        return max==second_max?-1:second_max;
+        return second_max;
     }
 }
