@@ -1,1 +1,45 @@
 //Quick Sort
+1. Pick 1st element from the array and place it in correct position
+2. smallest element on the left and larger on the left
+
+class Solution
+{
+    //Function to sort an array using quick sort algorithm.
+    static void quickSort(int arr[], int low, int high)
+    {
+        if(low<high)
+        {
+            int idx=partition(arr,low,high);
+            quickSort(arr,low,idx-1);
+            quickSort(arr,idx+1,high);
+        }
+    }
+    static int partition(int arr[], int low, int high)
+    {
+        int pivot=low;
+        int i=low+1;
+        int j=high;
+        while(i<=j)
+        {
+            while(i<=j && arr[i]<=arr[pivot])
+            {
+                i++;
+            }
+            while(i<=j && arr[j]>=arr[pivot])
+            {
+                j--;
+            }
+            
+            if(i<j)
+            {
+                int t=arr[i];
+                arr[i]=arr[j];
+                arr[j]=t;
+            }
+        }
+        int t=arr[pivot];
+        arr[pivot]=arr[j];
+        arr[j]=t;
+        return j;
+    } 
+}
