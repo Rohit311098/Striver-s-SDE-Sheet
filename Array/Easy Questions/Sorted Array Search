@@ -1,0 +1,23 @@
+//GFG: Sorted Array Search
+
+//Approach 1: Using Linear Search
+TC-O(N)   SC-O(1)
+//Normal linear search code
+
+//Approach 2: Using Binary Search
+TC-O(log(n))   SC-O(1)
+
+class Solution {
+    static boolean searchInSorted(int arr[], int k) {
+        
+        int low=0,high=arr.length-1;
+        while(low<=high)
+        {
+            int mid=low+(high-low)/2;
+            if(arr[mid]==k) return true;
+            if(arr[mid]>k) high=mid-1;
+            else low=mid+1;
+        }
+        return false;
+    }
+}
