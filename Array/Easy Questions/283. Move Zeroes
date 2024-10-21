@@ -1,0 +1,27 @@
+LC-283. Move Zeroes
+
+//Approach 1: Using an extra array and store the values inside that
+TC-O(N)   SC-O(N)
+//Normal code hai kar lega
+
+
+
+//Approach 2: Using in place algorithm same array mai change karege
+ TC-O(N)  SC-O(1)
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+
+        int i = -1, j = 0;
+
+        while (j < nums.length) {
+            if (nums[j] != 0) {
+                i++;
+                int t = nums[i];
+                nums[i] = nums[j];
+                nums[j] = t;
+            }
+            j++;
+        }
+    }
+}
