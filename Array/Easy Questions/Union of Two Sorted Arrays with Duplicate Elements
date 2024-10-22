@@ -1,3 +1,82 @@
 //GFG-Union of Two Sorted Arrays with Duplicate Elements
 
-//Brute Force: 
+//Brute Force: First find unique in A and then unique in b and then traverse on both the array
+TC-O(N+M)  SC-O(N)
+
+
+
+// Optimised Approach: 2 pointer
+TC-O(N+M)  SC-O(N)-> result
+
+class Solution {
+    // Function to return a list containing the union of the two arrays.
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+        int n1=a.length;
+        int n2=b.length;
+        int i=0,j=0;
+        int last=0;
+        ArrayList<Integer> result=new ArrayList<>();
+        
+        if(a[i]<b[j])
+        {
+            last=a[i];
+            result.add(a[i]);
+            i++;
+        }
+        else
+        {
+           last=b[j];
+           result.add(b[j]);
+           j++;
+        }
+        
+        while(i<n1 && j<n2)
+        {
+            if(a[i]==last)
+            {
+               i++;
+            }
+            else if(b[j]==last)
+            {
+                j++;
+            }
+            else 
+            {
+                if(a[i]<b[j])
+                {
+                    result.add(a[i]);
+                    last=a[i];
+                    i++;
+                }
+                else
+                {
+                    
+                    result.add(b[j]);
+                    last=b[j];
+                    j++;
+                }
+            }
+        }
+        
+        while(i<n1)
+        {
+            if(a[i]!=last)
+            {
+               result.add(a[i]);
+               last=a[i];
+            }
+            i++;
+        }
+        
+        while(j<n2)
+        {
+            if(b[j]!=last)
+            {
+               result.add(b[j]);
+               last=b[j];
+            }
+            j++;
+        }
+        return result;
+    }
+}
