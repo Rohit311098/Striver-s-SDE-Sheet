@@ -1,0 +1,6 @@
+//LC- 136. Single Number
+
+Brute Force: Using 2 loops 
+TC-O(N2)   SC-O(1)
+
+Optimised Approach: 
