@@ -1,6 +1,21 @@
 //LC- 136. Single Number
+XOR properties:
+1) XOR of same number is Zero(0)----------> N^N=0
+2) XOR of Zero with N is always N.--------> 0^N=N
 
-Brute Force: Using 2 loops 
-TC-O(N2)   SC-O(1)
+Brute Force: Using HashMap Approach
+TC-O(N)  SC-O(N)
 
-Optimised Approach: 
+Optimised Approach: Using XOR operator(^)
+TC-O(N)   SC-O(1)
+
+  public int approach2(int[] nums)
+    {
+        int result=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            result^=nums[i];
+        }
+        return result;
+    }
+
