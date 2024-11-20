@@ -8,8 +8,6 @@ Output:
   A B A
 A B C B A
 
-
-
 public class Solution {
     public static void alphaHill(int n) {
         
@@ -28,7 +26,7 @@ public class Solution {
                 alpa++;
             }
             alpa-=2;
-            for(int k=1;k<=i-1 && alpa>='A';k--)
+            for(int j=1;j<i;j++)
             {
                 System.out.print(alpa+" ");
                 alpa--;
